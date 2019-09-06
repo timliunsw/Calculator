@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet private weak var display: UILabel!
     private var isTyping = false
-    private var currentSymbol: String? = nil
+    private let DECIMAL_CHAR = "."
     private var model = CalculatorModel()
     private var displayValue: Double {
         get {
@@ -30,7 +30,14 @@ class ViewController: UIViewController {
 
     @IBAction private func tapDigit(_ sender: UIButton) {
         let digit = sender.currentTitle!
-        display.text = (isTyping ? display.text! : "") + digit
+        let isDecimalChar = digit == DECIMAL_CHAR
+        if isDecimalChar {
+            if !display.text!.contains(DECIMAL_CHAR) {
+                display.text = (isTyping ? display.text! : "0") + digit
+            }
+        } else {
+            display.text = (isTyping ? display.text! : "") + digit
+        }
         isTyping = true
     }
     
@@ -41,7 +48,7 @@ class ViewController: UIViewController {
         }
         
         if let symbol = sender.currentTitle {
-            model.calOperation(symble: symbol)
+            model.calOperation(symbol)
         }
         
         displayValue = model.result

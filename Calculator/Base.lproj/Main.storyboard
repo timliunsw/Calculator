@@ -406,6 +406,9 @@
                                                                 <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="tapDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LdX-20-6zT"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3a-MA-XTm">
                                                         <rect key="frame" x="313.5" y="0.0" width="80.5" height="115"/>

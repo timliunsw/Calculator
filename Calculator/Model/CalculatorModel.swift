@@ -40,7 +40,7 @@ class CalculatorModel {
         isTappedCal = false
     }
     
-    func calOperation(symbol: String) {
+    func calOperation(_ symbol: String) {
         if let operation = operations[symbol] {
             switch operation {
             case .Cal(let cal):
